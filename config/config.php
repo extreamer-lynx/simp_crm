@@ -4,7 +4,7 @@ $CMSConfig=[
         [
           'Server'=>'localhost',
           'User'=>'root',
-          'Password'=>'',
-          'Database'=>'drdelen'
+          'Password'=>'root',
+          'Database'=>'guitar-shop'
         ]
 ];

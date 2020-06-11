@@ -3,6 +3,8 @@
 
 namespace core;
 
+use models\User;
+
 /**
  *Головний клас ядра сисетми
  *(сингтон)
@@ -12,8 +14,9 @@ class Core
  *статичний єдиний екземпляр обєкта
  */
     public static $instance;
-    public static $mainTemplate;
-
+    public $mainTemplate;
+    private $DB;
+    private $authUser;
     private function __construct()
     {
 
@@ -41,12 +44,19 @@ class Core
      */
     public function init()
     {
+        global $CMSConfig;
         session_start();
-        //підєднання до бз
-
-
         spl_autoload_register('\core\Core::__autoload');
-        self::$mainTemplate = new Template();
+        //підєднання до DB
+        $this->DB=new \core\DB($CMSConfig['Database']['Server'],$CMSConfig['Database']['User'],$CMSConfig['Database']['Password'],$CMSConfig['Database']['Database']);
+
+        $this->mainTemplate = new Template();
+
+    }
+
+    public function getUserSesion()
+    {
+        return $this->authUser;
     }
 
     /**
@@ -81,7 +91,7 @@ class Core
                 $result = $method->invokeArgs($controller, $paramsArray);
                 //  var_dump($result);
                 if (is_array($result)) {
-                    self::$mainTemplate->setParams($result);
+                    $this->mainTemplate->setParams($result);
                 }
                 // $controller->$fullMethodName($paramsArray);
             } else
@@ -91,6 +101,13 @@ class Core
             throw new \Exception('404 Сторінку не знайдено');
         }
     }
+    /**
+     * Повертає обєкт БД
+     *  @return DB
+     */
+    public function GetDB(){
+        return $this->DB;
+    }
 
     /**
      *Завершення роботи системи та виведення результату
@@ -98,13 +115,14 @@ class Core
      */
     public function done()
     {
-        self::$mainTemplate->display('views/layout/index.php');
+        $this->mainTemplate->display('views/layout/index.php');
     }
     /**
     *
      */
     public static function __autoload($className)
     {
+
         $fileName = $className . '.php';
         if (is_file($fileName)) {
             include($fileName);
