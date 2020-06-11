@@ -3,8 +3,8 @@ $CMSConfig=[
     'Database'=>
         [
           'Server'=>'localhost',
-          'User'=>'root',
-          'Password'=>'root',
-          'Database'=>'guitar-shop'
+          'User'=>'franchuk02@adm',
+          'Password'=>'k99FiMj=}A{j3%sT',
+          'Database'=>'id12498286_guitar_shop'
         ]
 ];
