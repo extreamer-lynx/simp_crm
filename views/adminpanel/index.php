@@ -174,13 +174,13 @@
                                     <h5>Додати категорію</h5>
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1"><h6>Назва</h6></label>
-                                        <input type="text" class="form-control" name="ua_name"
+                                        <input type="text" class="form-control" name="name"
                                                id="exampleFormControlTextarea1"
                                                rows="3"></input>
                                         <br>
                                         <label for="exampleFormControlTextarea1"><h6>Назва на англійському</h6>
                                         </label>
-                                        <input type="text" class="form-control" name="name"
+                                        <input type="text" class="form-control" name="ua_name"
                                                id="exampleFormControlTextarea1"
                                                rows="3"></input>
                                     </div>

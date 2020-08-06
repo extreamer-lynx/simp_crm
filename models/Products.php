@@ -182,7 +182,7 @@ class Products
                                 <td>{$sells['id_products']}</td>
                                 <td>{$sells['date']}</td>
                                 <td>{$stat['text']}</td>
-                                <td> <input type=\"button\" class=\"btn btn-dark\" id=\"changeStatus\" onclick=\"chngStat({$sells['id_sell']},{$stat['stat']})\" value=\"Виконано\"></td>
+                                <td> <input type=\"button\" class=\"btn btn-dark\" id=\"changeStatus\" onclick=\"chngStat({$sells['id_sell']},{$stat['stat']})\" value=\"Змінити статус\"></td>
                             </tr>";
 
         }

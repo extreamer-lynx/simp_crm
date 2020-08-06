@@ -149,8 +149,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `login`, `password`, `salt`, `cookie`, `role`) VALUES
-(1, 'franchuk02@gmail.com', '8d07677ebd1cfdaf26131cc7093b5b95', 'r\'57G)r\'', '^{%j}Ac6\"j1591814119', 'admin'),
-(2, 'kondrat02@gmail.com', '6c93ba4e2b65e8e469deab2c7fd89718', '{6KIN$eT', 'g43B[)7C>T1591614230', 'member');
+(1, 'kondrat02@gmail.com', '6c93ba4e2b65e8e469deab2c7fd89718', '{6KIN$eT', 'g43B[)7C>T1591614230', 'admin');
 
 --
 -- Індекси збережених таблиць
